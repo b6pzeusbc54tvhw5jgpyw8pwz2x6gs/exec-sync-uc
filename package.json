@@ -1,0 +1,27 @@
+{
+  "name": "exec-sync-uc",
+  "version": "1.0.0",
+  "description": "for using nodejs native sync-exec as array command with log",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "sync-exec",
+    "exec"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b6pzeusbc54tvhw5jgpyw8pwz2x6gs/exec-sync-uc.git"
+  },
+  "author": "Alfred UC <b6pzeusbc54tvhw5jgpyw8pwz2x6gs@gmail.com> (https://github.com/b6pzeusbc54tvhw5jgpyw8pwz2x6gs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/b6pzeusbc54tvhw5jgpyw8pwz2x6gs/exec-sync-uc/issues"
+  },
+  "homepage": "https://github.com/b6pzeusbc54tvhw5jgpyw8pwz2x6gs/exec-sync-uc#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "object-assign": "^4.1.0"
+  }
+}

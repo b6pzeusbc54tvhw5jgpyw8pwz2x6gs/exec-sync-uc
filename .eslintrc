@@ -1,0 +1,24 @@
+{
+  "ecmaFeatures": {
+    "templateStrings": true,
+    "modules": true,
+    "classes": true,
+    "arrowFunctions": true,
+    "blockBindings": true
+  },
+  "rules": {
+    "semi": 1,
+    "no-cond-assign": 1,
+    "no-unreachable": 1,
+    "block-scoped-var": 2,
+    "no-redeclare": 2,
+    "no-undef": 2,
+    "no-shadow": [2, {"hoist": "functions", "allow": ["e"] }],
+    "no-use-before-define": [2, "nofunc"],
+    "no-unused-vars": [1, {"vars": "all", "args": "none"}]
+  },
+  "env": {
+    "node": true
+  }
+}
+
