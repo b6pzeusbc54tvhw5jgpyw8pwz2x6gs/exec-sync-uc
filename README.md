@@ -34,27 +34,3 @@ execSync('unzip'+ zip_file +' -d'+ DIR_NAME ]);
 execSync(['unzip', zip_file, '-d', DIR_NAME ]);
 execSync([ NPM, 'install', '--production'], { cwd: DIR_NAME });
 ```
-
-
-
-
-## Usage 3
-
-```javascript
-/*
-default options is
-const execOptions = {
-	stdio: [ process.stdin, process.stdout, process.stderr ],
-	cwd: path.resolve( process.cwd() )
-};
-*/
-
-// you can overwrite default options
-const options = {
-	stdio: [ process.stdin, process.stdout, fs.openSync('err.out', 'w') ]
-};
-
-execSync(['rm', '-rf', 'test_dir' ]);
-execSync(['mkdir', 'test_dir' ]);
-execSync(['mkdir', 'test_dir'], options );
-```
