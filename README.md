@@ -28,7 +28,7 @@ const zip_file = process.argv[2];
 
 execSync(['rm', '-rf', DIR_NAME ]);
 
-execSync('unzip'+ zip_file +' -d'+ DIR_NAME ]);
+execSync('unzip'+ zip_file +' -d'+ DIR_NAME );
 // It's hard to find problem by `whitespace`, let's use below
 
 execSync(['unzip', zip_file, '-d', DIR_NAME ]);

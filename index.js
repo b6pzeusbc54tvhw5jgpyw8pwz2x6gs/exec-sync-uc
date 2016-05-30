@@ -42,6 +42,8 @@ function execUC( cmd, options ) {
 
 	try {
 		result.stdout = execSync( cmd, options );
+		//result.stdout = result.stdout.replace(/\n$/, '');
+		result.stdout = result.stdout.trim();
 	} catch( err ) {
 
 		//process.stdout.write = originalStdoutWrite;
@@ -49,6 +51,8 @@ function execUC( cmd, options ) {
 
 		result.status = err.status;
 		result.stderr = err.stderr;
+		//result.stderr = result.stderr.replace(/\n$/,'');
+		result.stderr = result.stderr.trim();
 
 		console.error( err.stderr );
 

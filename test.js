@@ -11,3 +11,10 @@ if( result.status !== 0 ) {
 	console.log('An error occurred in execSync. Now, check err.out file');
 	execSync(['cat','err.out']);
 }
+
+
+// test3
+console.log( execSync('git rev-parse HEAD') );
+
+// test3
+console.log( execSync('gdit rev-parse HEAD') );
