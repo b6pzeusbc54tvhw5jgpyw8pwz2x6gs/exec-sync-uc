@@ -52,7 +52,7 @@ function execUC( cmd, options ) {
 		result.status = err.status;
 		result.stderr = err.stderr;
 		//result.stderr = result.stderr.replace(/\n$/,'');
-		result.stderr = result.stderr.trim();
+		result.stderr = (result.stderr || '').trim();
 
 		console.error( err.stderr );
 
