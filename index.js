@@ -12,7 +12,8 @@ const isArray = Array.isArray || function(obj) {
 const execOptions = {
 	//stdio: [ process.stdin, process.stdout, process.stderr ],
 	encoding: 'utf8',
-	cwd: path.resolve( process.cwd() )
+	cwd: path.resolve( process.cwd() ),
+	silent: false,
 };
 
 function execUC( cmd, options ) {
@@ -29,9 +30,11 @@ function execUC( cmd, options ) {
 
 	const prompt = options.cwd.cyan + '$ ';
 
-	console.log('');
-	console.log('--------------------start exec------------------'.cyan);
-	console.log( prompt.magenta + cmd );
+	if( ! options.silent ) {
+		console.log('');
+		console.log('--------------------start exec------------------'.cyan);
+		console.log( prompt.magenta + cmd );
+	}
 
 	const result = { stdout: '', stderr: '', status: 0 };
 
@@ -54,19 +57,23 @@ function execUC( cmd, options ) {
 		//result.stderr = result.stderr.replace(/\n$/,'');
 		result.stderr = (result.stderr || '').trim();
 
-		console.error( err.stderr );
+		if( ! options.silent ) {
+			console.error( err.stderr );
 
-		console.log('--------------------/end exec with error---------'.yellow);
-		console.log('');
+			console.log('--------------------/end exec with error---------'.yellow);
+			console.log('');
+		}
 		return result;
 	}
 	//process.stdout.write = originalStdoutWrite;
 	process.stderr.write = originalStderrWrite;
 
-	console.log( result.stdout );
+	if( ! options.silent ) {
+		console.log( result.stdout );
 
-	console.log('--------------------/end exec-------------------'.cyan);
-	console.log('');
+		console.log('--------------------/end exec-------------------'.cyan);
+		console.log('');
+	}
 	return result;
 }
 
